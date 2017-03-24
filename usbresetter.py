@@ -25,8 +25,6 @@ if (getuid() != 0):
 	exit(1)
 
 while True:
-
-
 	output = subprocess.Popen('lsusb', stdout=subprocess.PIPE, universal_newlines=True ).communicate()[0]
 
 	screen = curses.initscr()
@@ -59,5 +57,3 @@ while True:
 	if (x < cmdno and x >= ord('a')):
 		curses.endwin()
 		resetusb(cmd_list[chr(x)])
-
-
