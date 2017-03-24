@@ -1,0 +1,2 @@
+# usbresetter
+USB reset script
