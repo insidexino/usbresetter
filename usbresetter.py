@@ -21,7 +21,8 @@ def resetusb(device):
 
 
 if (getuid() != 0):
-	print('Root privilige is needed.')
+	exe = subprocess.Popen(['sudo', __file__])
+	exe.wait()
 	exit(1)
 
 while True:
@@ -52,6 +53,7 @@ while True:
 	x = screen.getch()
 
 	if (x == cmdno):
+		curses.endwin()
 		break;
 
 	if (x < cmdno and x >= ord('a')):
